@@ -33,7 +33,9 @@ The API persists PANDA data to a SQL Server database. When the API is run for th
 There are two ways you can interact with the API, Postman and Scalar.
 
 1. Included in the repo is a Postman Collection (panda.postman_collection.json) which you can import into Postman. Once you create a Patient the 'id' of the responce automatically gets updated so that you can continue to interact with the API without cutting and pasting GUIDs.
-2. Scalar has been provided for 2 reasons. The first is that it documents the API and is based on the OpenAPI standard. The second is that it provides a mechanism for front end developers to familiarise themselves with the API whilst developing the front-end application. To interact with the API using Scalar open a browser with the following Url - https://localhost:5001/scalar/v1.
+2. Scalar has been provided for 2 reasons. The first is that it documents the API and is based on the OpenAPI standard. The second is that it provides a mechanism for front end developers to familiarise themselves with the API whilst developing the front-end application.
+
+To interact with the API using Scalar open a browser with the following Url - https://localhost:5001/scalar/v1.
 
 ## Architecture
 
@@ -43,11 +45,11 @@ I have tried to ensure loose coupling between distinct areas of the application.
 
 ## Functionality
 
-I have focused much of my time on developing a vertical slice of the application for Patients. I have also included the data structures for Appointments and Clinicians to show how I would tackle some of the design decisions in the wider application. You can still interact with Appointments and Clinicians but its not as feature rich as Patients. Hopefully I have demonstrated my approach enough in Patients that you can see how the Appointments and Clinician functionality would be implemented.
+I have focused much of my time on developing a vertical slice of the application for Patients. I have also included the data structures for Appointments and Clinicians to show how I would tackle some of the design decisions in the wider application. You can still interact with Appointments and Clinicians but its not as feature rich as Patients. Hopefully I have demonstrated my approach enough in Patients, so that you can see how the Appointments and Clinician functionality would be implemented.
 
 ## Missing Functionality
 
-My solution was to focus on the 'hard requirements', CRUD functionality for the core entities. I have prioritised data integrity, ensuring that the data entered into the system is valid and meets the business requirements. This can be seen in the use of validators in the services and the use of immutable records in the DTOs. Ensuring the correct data types that support UTF-8 for conforming to GDPR and nicely formatted error messages are returned to the client.
+My solution was to focus on the 'hard requirements', CRUD functionality for the core entities. I have prioritised data integrity, ensuring that the data entered into the system is valid and meets the business requirements. This can be seen in the use of validators in the services and the use of immutable records in the DTOs. Ensuring the correct data types that support UTF-8 for conforming to GDPR and that the API produces nicely formatted error messages to the client.
 
 I believe by delivering the 'hard requirements' and building a strong robust foundation, it will be much simpler and quicker to add the additional pieces of functionality in future sprints.
 

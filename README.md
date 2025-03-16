@@ -9,9 +9,10 @@ As my background is .NET development I have created an API using .NET API, EFCor
 ## Requirements
 
 Once you have downloaded the repo you will need to ensure that you have the following installed on your machine:
-[Visual Studio 2022 v17.13.3](https://visualstudio.microsoft.com/vs/). It may work with earlier versions as docker support was added around v17.11
-[Latest version of .NET 9](https://www.datadictionary.nhs.uk/attributes/nhs_number.html).
-[Docker Desktop](https://www.docker.com/products/docker-desktop/)
+
+- [Visual Studio 2022 v17.13.3](https://visualstudio.microsoft.com/vs/{target=_blank}). It may work with earlier versions as docker support was added around v17.11
+- [Latest version of .NET 9](https://dotnet.microsoft.com/en-us/download{target=_blank}).
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/{target=_blank})
 
 ## Running
 
@@ -25,7 +26,7 @@ Once you have downloaded the repo you will need to ensure that you have the foll
 
 ## Database
 
-The API persists PANDA data to a SQL Server database. When the API is run for the first time I have seeded test data so you can interacting with the API straight away. I have used V4 UUIDs as primary keys (GUID). Not the best for performance but preferred for security concerns and performance can be overcome with a good indexing and caching startegy.
+The API persists PANDA data to a SQL Server database. When the API is run for the first time I have seeded test data so you can interacting with the API straight away. I have used V4 UUIDs as primary keys (GUID). Not the best for performance but preferred for security and use in a mult-system environment. Performance can be overcome with a good indexing and caching startegy.
 
 ## Interact With API
 

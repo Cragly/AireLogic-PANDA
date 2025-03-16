@@ -51,10 +51,10 @@ My solution was to focus on the 'hard requirements', CRUD functionality for the 
 
 I believe by delivering the 'hard requirements' and building a strong robust foundation, it will be much simpler and quicker to add the additional pieces of functionality in future sprints.
 
-Missed appointments (if time permitted) would be included in the API as I see it as a key piece of business logic. This could be implemented in several ways, either a server scheduled task or probably my preferred solution of a non-blocking background task running independently of the application thread.
+Missed appointments (if time permitted) would have been included in the API, as I see it as a key piece of business logic. This could be implemented in several ways, either as a server scheduled task or probably my preferred solution, a non-blocking background task, running independently of the application thread.
 
-There is a host of other functionality that I haven't included due to the time constraints, such as API versioning, searching, pagination and maybe even making the API 100% RESTful with the inclusion of Hypermedia which may benefit the front end team.
+There is a host of other functionality that I haven't included due to time constraints, such as API versioning, searching, pagination and maybe even making the API 100% RESTful, with the inclusion of Hypermedia, which may benefit the front end team.
 
 ## Testing
 
-I have only created a single test class to demonstrate how I go about testing an application and writing my tests. In it I am just testing the happy and sad paths of the patient validator using the Arrange, Act Assert pattern. More comprehensive testing would involve testing the controllers, services using Moq to create Mocks and Stubs etc.
+I have only created a single test class to demonstrate how I go about testing an application and writing unit tests. I am just testing the happy and sad paths of the patient validator using the Arrange, Act, Assert pattern. More comprehensive testing would involve testing the controllers and services using Moq to create Mocks and Stubs etc.

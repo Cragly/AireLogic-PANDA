@@ -1,0 +1,88 @@
+@baseUrl = https://localhost:5001
+
+# === PATIENTS ===
+###
+POST {{baseUrl}}/patients/
+Accept: application/json
+Content-Type: application/json
+
+{
+    "nhsNumber": "0240288238",
+    "title": "Mr",
+    "firstName": "Lawrence",
+    "surname": "Lucas",
+    "dateOfBirth": "1954-09-10",
+    "postcode": "N1 5ZG"
+}
+
+###
+GET {{baseUrl}}/patients/
+Accept: application/json
+
+###
+GET {{baseUrl}}/patients/9a9e8d7e-58d2-4ecc-93f1-4425f1e51bec
+Accept: application/json
+
+
+###
+PUT {{baseUrl}}/patients/
+Accept: application/json
+Content-Type: application/json
+
+{
+    "NhsNumber": "0240288238",
+    "Title": "Mr",
+    "FirstName": "Lawrence",
+    "Surname": "Lucas",
+    "DateOfBirth": "1954-09-11",
+    "Postcode": "N1 5ZG"
+}
+
+###
+DELETE {{baseUrl}}/patients/9a9e8d7e-58d2-4ecc-93f1-4425f1e51bec
+Accept: application/json
+
+###
+# === CLINICIANS ===
+GET {{baseUrl}}/clinicians/
+Accept: application/json
+
+
+###
+# === APPOINTMENTS ===
+GET {{baseUrl}}/appointments/
+Accept: application/json
+
+###
+POST {{baseUrl}}/appointments/
+Accept: application/json
+Content-Type: application/json
+
+{
+    "PatientId": "9a9e8d7e-58d2-4ecc-93f1-4425f1e51bec",
+    "ClinicianId": "b7fd5c25-61d6-4634-82f0-e18f27b51f2a",
+    "Status": "active",
+    "StartTime": "2025-03-27T13:00:00+00:00",
+    "Duration": "60",
+    "Department": "oncology",
+    "Postcode": "UB56 7XQ"
+}
+
+###
+PUT {{baseUrl}}/appointments/
+Accept: application/json
+Content-Type: application/json
+
+{
+    "PatientId": "9a9e8d7e-58d2-4ecc-93f1-4425f1e51bec",
+    "ClinicianId": "b7fd5c25-61d6-4634-82f0-e18f27b51f2a",
+    "Status": "active",
+    "StartTime": "2025-03-27T13:00:00+00:00",
+    "Duration": "60",
+    "Department": "oncology",
+    "Postcode": "UB56 7XQ"
+}
+
+
+DELETE {{baseUrl}}/appointments/343D31D4-5993-47EF-A468-7884A467AE81
+Accept: application/json

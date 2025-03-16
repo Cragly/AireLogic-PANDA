@@ -10,9 +10,9 @@ As my background is .NET development I have created an API using .NET API, EFCor
 
 Once you have downloaded the repo you will need to ensure that you have the following installed on your machine:
 
-- [Visual Studio 2022 v17.13.3](https://visualstudio.microsoft.com/vs/{target=_blank}). It may work with earlier versions as docker support was added around v17.11
-- [Latest version of .NET 9](https://dotnet.microsoft.com/en-us/download{target=_blank}).
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/{target=_blank})
+- [Visual Studio 2022 v17.13.3](https://visualstudio.microsoft.com/vs/). It may work with earlier versions as docker support was added around v17.11
+- [Latest version of .NET 9](https://dotnet.microsoft.com/en-us/download).
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
 ## Running
 

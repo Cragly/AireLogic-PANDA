@@ -17,8 +17,9 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Successful POST request\", function () {",
-									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"pm.test(\"Save primary key to variable\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.collectionVariables.set(\"created_patient_id\", jsonData.id);",
 									"});",
 									""
 								],
@@ -32,7 +33,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"nhsNumber\": \"0240288238\",\n    \"title\": \"Mr\",\n    \"firstName\": \"Craig\",\n    \"surname\": \"Pickering\",\n    \"dateOfBirth\": \"1975-11-27\",\n    \"postcode\": \"TS17 5GB\"\n}",
+							"raw": "{\n    \"nhsNumber\": \"0240288238\",\n    \"title\": \"Mr\",\n    \"firstName\": \"Lawrence\",\n    \"surname\": \"Lucas\",\n    \"dateOfBirth\": \"1954-09-10\",\n    \"postcode\": \"N1 5ZG\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -40,12 +41,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:5001/api/patients",
-							"protocol": "https",
+							"raw": "{{base_url}}/api/patients",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "5001",
 							"path": [
 								"api",
 								"patients"
@@ -86,13 +85,12 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:5001/patients",
-							"protocol": "https",
+							"raw": "{{base_url}}/api/patients",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "5001",
 							"path": [
+								"api",
 								"patients"
 							]
 						},
@@ -120,12 +118,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:5001/api/patients/:id",
-							"protocol": "https",
+							"raw": "{{base_url}}/api/patients/:id",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "5001",
 							"path": [
 								"api",
 								"patients",
@@ -134,7 +130,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "a8061fd8-8778-4a35-b2ce-421b1d6e978f"
+									"value": "{{created_patient_id}}"
 								}
 							]
 						},
@@ -172,12 +168,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:5001/api/patients/:id",
-							"protocol": "https",
+							"raw": "{{base_url}}/api/patients/:id",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "5001",
 							"path": [
 								"api",
 								"patients",
@@ -186,7 +180,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "af984927-acd7-4a53-b82c-b96901e7cf38"
+									"value": "{{created_patient_id}}"
 								}
 							]
 						},
@@ -224,12 +218,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:5001/api/patients/:id",
-							"protocol": "https",
+							"raw": "{{base_url}}/api/patients/:id",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "5001",
 							"path": [
 								"api",
 								"patients",
@@ -238,7 +230,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "9a9e8d7e-58d2-4ecc-93f1-4425f1e51bec"
+									"value": "{{created_patient_id}}"
 								}
 							]
 						},
@@ -282,14 +274,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:5001/patients",
-							"protocol": "https",
+							"raw": "{{base_url}}/api/clinicians",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "5001",
 							"path": [
-								"patients"
+								"api",
+								"clinicians"
 							]
 						},
 						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
@@ -331,12 +322,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:5001/api/appointments",
-							"protocol": "https",
+							"raw": "{{base_url}}/api/appointments",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "5001",
 							"path": [
 								"api",
 								"appointments"
@@ -377,14 +366,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:5001/patients",
-							"protocol": "https",
+							"raw": "{{base_url}}/api/appointments",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "5001",
 							"path": [
-								"patients"
+								"api",
+								"appointments"
 							]
 						},
 						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
@@ -421,7 +409,12 @@
 		},
 		{
 			"key": "base_url",
-			"value": "https://postman-rest-api-learner.glitch.me/"
+			"value": "https://localhost:5001"
+		},
+		{
+			"key": "created_patient_id",
+			"value": "",
+			"type": "string"
 		}
 	]
 }

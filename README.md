@@ -57,6 +57,8 @@ Missed appointments (if time permitted) would have been included in the API, as 
 
 There is a host of other functionality that I haven't included due to time constraints, such as API versioning, searching, pagination and maybe even making the API 100% RESTful, with the inclusion of Hypermedia, which may benefit the front end team.
 
+I have also left out some cross cutting conserns such global exception handling to enable me to not spend time focusing on the customers requirements. It goes without saying that I would not deploy an application without the correct amount of exception handling, logging and telemetry.
+
 ## Testing
 
 I have only created a single test class to demonstrate how I go about testing an application and writing unit tests. I am just testing the happy and sad paths of the patient validator using the Arrange, Act, Assert pattern. More comprehensive testing would involve testing the controllers and services using Moq to create Mocks and Stubs etc.
